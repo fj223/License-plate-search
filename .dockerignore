@@ -1,0 +1,17 @@
+.venv/
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+logs/
+*.db
+.env
+密钥tocken
+test_map.png
+test_detail_map.png
+*.jpg
+bot/maps/*.png
+bot/tts/*.wav

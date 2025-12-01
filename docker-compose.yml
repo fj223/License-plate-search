@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  bot:
+    build: .
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      DEFAULT_LANG: ru
+    restart: unless-stopped
+    volumes:
+      - ./bot/maps:/app/bot/maps
+      - ./bot/tts:/app/bot/tts
