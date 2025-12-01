@@ -116,6 +116,3 @@ python -m bot.main --selftest
 
 ---
 
-## Лицензия (License)
-
-本项目示例性质，未附带开源许可证。若需要选择开源协议（MIT/GPL/Apache），请告知，我将添加相应 LICENSE。
