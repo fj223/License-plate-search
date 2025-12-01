@@ -29,3 +29,7 @@ build/
 
 # Generated test artifacts
 test_map.png
+test_detail_map.png
+*.jpg
+bot/maps/*.png
+bot/tts/*.wav
