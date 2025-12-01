@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual envs
+.venv/
+env/
+venv/
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+
+# Data & cache
+*.db
+*.sqlite
+logs/
+
+# Secrets and local tokens
+.env
+密钥tocken
+
+# Build outputs
+dist/
+build/
+
+# Generated test artifacts
+test_map.png
