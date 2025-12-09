@@ -1,4 +1,4 @@
-version: "3.8"
+name: number_plate_bot
 services:
   bot:
     build: .
