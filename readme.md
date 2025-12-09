@@ -1,11 +1,11 @@
 # Лицензия: Поиск номеров (License Plate Search)
 
-Проект: Телеграм‑бот, который отвечает на городские/региональные запросы по России и возвращает:
+Проект: Телеграм‑бот **suif_bot** (@suif_123_bot), который отвечает на городские/региональные запросы по России и возвращает:
 - региональные коды автомобильных номеров
 - телефонные коды городов
 - карту с указанием местоположения города и контекстом по всей России (Yandex Static Maps)
 
-中文简介：一个支持俄语/中文的俄罗斯城市/地区查询 Telegram 机器人，返回车牌区域代码、电话区号，并展示城市在俄罗斯联邦中的地理位置（Yandex 静态地图）。
+中文简介：一个支持俄语/中文的俄罗斯城市/地区查询 Telegram 机器人 **suif_bot** (@suif_123_bot)，返回车牌区域代码、电话区号，并展示城市在俄罗斯联邦中的地理位置（Yandex 静态地图）。
 
 ---
 
@@ -36,6 +36,28 @@
 ---
 
 ## Установка и запуск (Setup & Run)
+
+### 从 GitHub 拉取项目
+
+```bash
+# 克隆仓库
+git clone https://github.com/fj223/License-plate-search.git
+cd License-plate-search
+```
+
+### 从 Docker Hub 拉取镜像
+
+```bash
+# 拉取最新镜像
+docker pull suif123/license_plate_search:latest
+
+# 运行容器
+docker run -d --name license-plate-search \
+  -e TELEGRAM_BOT_TOKEN="<你的Bot令牌>" \
+  suif123/license_plate_search:latest
+```
+
+### 本地安装与运行
 
 Windows PowerShell：
 
