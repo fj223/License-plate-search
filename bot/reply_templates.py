@@ -17,3 +17,8 @@ def format_not_found(lang):
     if lang == "zh":
         return "未找到匹配结果"
     return "Ничего не найдено"
+
+def format_license_plate(lang, plate, region_ru, region_zh):
+    if lang == "zh":
+        return f"车牌号码：{plate}\n所属区域：{region_zh or region_ru}"
+    return f"Номерной знак: {plate}\nРегион: {region_ru or region_zh}"

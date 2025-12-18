@@ -9,6 +9,15 @@ def detect_language(text):
 
 def parse_intent(text):
     t = text.strip().lower()
+    # 检测完整车牌号码格式 (俄罗斯车牌格式: А123ВЕ199)
+    license_plate_pattern = r"[АВЕКМНОРСТУХABEKMHOPCTYX]\d{3}[АВЕКМНОРСТУХABEKMHOPCTYX]{2}\d{2,3}"
+    license_plate_match = re.search(license_plate_pattern, text.upper())
+    if license_plate_match:
+        plate = license_plate_match.group()
+        # 提取车牌中的区域代码（最后2-3位数字）
+        region_code = re.search(r"\d{2,3}$", plate).group()
+        return {"intent": "license_plate", "plate": plate, "region_code": region_code}
+    
     if any(k in t for k in ["电话", "区号", "area code", "телефон", "код города", "телефонный код"]):
         digits = re.findall(r"\d{3,4}", t)
         if digits:

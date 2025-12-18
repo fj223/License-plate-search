@@ -7,5 +7,5 @@ services:
       DEFAULT_LANG: ru
     restart: unless-stopped
     volumes:
-      - ./bot/maps:/app/bot/maps
-      - ./bot/tts:/app/bot/tts
+      - ./bot:/app/bot
+      - ./bot.log:/app/bot.log

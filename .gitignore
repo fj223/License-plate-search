@@ -18,6 +18,7 @@ venv/
 *.db
 *.sqlite
 logs/
+bot.log
 
 # Secrets and local tokens
 .env
@@ -33,3 +34,7 @@ test_detail_map.png
 *.jpg
 bot/maps/*.png
 bot/tts/*.wav
+bot/tts/*.mp3
+
+# Temporary test scripts
+test_*.py

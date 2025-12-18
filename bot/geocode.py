@@ -21,37 +21,6 @@ def geocode_city(name):
 
 def geocode_region_polygon(name):
     q = name.strip()
-    url = "https://nominatim.openstreetmap.org/search?format=json&polygon_geojson=1&addressdetails=1&accept-language=ru&limit=1&q=" + urllib.parse.quote(q)
-    req = urllib.request.Request(url, headers={"User-Agent": "rf-region-bot/1.0"})
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        data = resp.read()
-    arr = json.loads(data.decode("utf-8"))
-    if not arr:
-        return None
-    it = arr[0]
-    gj = it.get("geojson")
-    bb = it.get("boundingbox")
-    if bb and len(bb) == 4:
-        minlat = float(bb[0]); maxlat = float(bb[1]); minlon = float(bb[2]); maxlon = float(bb[3])
-        bbox = [minlon, minlat, maxlon, maxlat]
-    else:
-        bbox = None
-    return {"geojson": gj, "bbox": bbox}
-
-def geocode_city_label(name, lang="ru"):
-    q = name.strip()
-    url = "https://nominatim.openstreetmap.org/search?format=json&accept-language=" + urllib.parse.quote(lang) + "&limit=1&q=" + urllib.parse.quote(q)
-    req = urllib.request.Request(url, headers={"User-Agent": "rf-region-bot/1.0"})
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        data = resp.read()
-    arr = json.loads(data.decode("utf-8"))
-    if not arr:
-        return None
-    it = arr[0]
-    return it.get("display_name") or q
-
-def geocode_region_polygon(name):
-    q = name.strip()
     url = "https://nominatim.openstreetmap.org/search?format=jsonv2&polygon_geojson=1&limit=1&accept-language=ru&q=" + urllib.parse.quote(q)
     req = urllib.request.Request(url, headers={"User-Agent": "rf-region-bot/1.0"})
     with urllib.request.urlopen(req, timeout=10) as resp:
